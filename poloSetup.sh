@@ -2,13 +2,10 @@
 
 #Basic app instalation
 
-echo "Hey"
-
 mv -r Backgrounds/ ~/Documents/Backgrounds
 
 sudo pacman -Syu
 
-sudo pacman -S git
 sudo pacman -S kitty
 sudo pacman -S stow
 
@@ -16,6 +13,13 @@ sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+
+yay -S google-chrome 
+sudo pacman -S firefox
+
+
+yay -S python3-aur 
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 cd 
 
@@ -33,13 +37,6 @@ mkdir development
 tar -xf ~/Downloads/flutter_linux_3.24.5-stable.tar.xz -C ~/development/
 
 flutter doctor --android-licenses
-
-ysy -S google-chrome 
-yay -S firefox-nightly 
-
-
-yay -S python3-aur 
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 yay -S nvim
 yay -S android-studio 
