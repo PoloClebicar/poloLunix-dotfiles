@@ -4,7 +4,7 @@
 
 echo "Hey"
 
-mv Backgrounds/ ~/Documents/Backgrounds
+mv -r Backgrounds/ ~/Documents/Backgrounds
 
 sudo pacman -Syu
 
