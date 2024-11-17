@@ -8,6 +8,7 @@ sudo pacman -Syu
 
 sudo pacman -S kitty
 sudo pacman -S stow
+sudo pacman -S starship
 
 sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
@@ -38,6 +39,20 @@ mkdir development
 
 tar -xf ~/Downloads/flutter_linux_3.24.5-stable.tar.xz -C ~/development/
 
+cd
+
+curl -L -R -O https://www.lua.org/ftp/lua-5.4.7.tar.gz
+tar zxf lua-5.4.7.tar.gz
+cd lua-5.4.7
+make all test
+
+cd ~/Downloads
+
+curls -O https://download.oracle.com/java/23/latest/jdk-23_linux-aarch64_bin.tar.gz
+
+tar -xf ~/Downloads/jdk-23_linux-aarch64_bin.tar.gz -C ~/development/
+
+cd
 
 yay -S neovim
 yay -S android-studio 
@@ -52,12 +67,13 @@ rm -rf ~/.config/kitty
 rm -rf ~/.config/nvim
 rm -rf ~/.config/waybar
 rm -rf ~/.config/wofi
+rm  ~/.bashrc
 
 mv hyprland.conf ~/.config/hypr/hyprland.conf
 
 stow .
 
-sudo shutdown -r now
+yay -Syu
 
 
 
