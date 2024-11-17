@@ -4,6 +4,8 @@
 
 echo "Hey"
 
+mv Backgrounds/ ~/Documents/Backgrounds
+
 sudo pacman -Syu
 
 sudo pacman -S git
