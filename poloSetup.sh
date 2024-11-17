@@ -14,6 +14,8 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
+cd 
+
 yay -S google-chrome 
 sudo pacman -S firefox
 
@@ -36,18 +38,24 @@ mkdir development
 
 tar -xf ~/Downloads/flutter_linux_3.24.5-stable.tar.xz -C ~/development/
 
-flutter doctor --android-licenses
 
-yay -S nvim
+yay -S neovim
 yay -S android-studio 
 
 yay -S waybay wofi hyprland hyprlock spotify hypridle hyprpaper
 
 cd ~/poloLunix-dotfiles 
 
-stow .
+
+rm -rf ~/.config/hypr
+rm -rf ~/.config/kitty
+rm -rf ~/.config/nvim
+rm -rf ~/.config/waybar
+rm -rf ~/.config/wofi
 
 mv hyprland.conf ~/.config/hypr/hyprland.conf
+
+stow .
 
 sudo shutdown -r now
 
