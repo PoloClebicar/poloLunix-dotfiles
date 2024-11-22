@@ -3,31 +3,25 @@
 #Basic app instalation
 
 mv -r Backgrounds/ ~/Documents/Backgrounds
-
 sudo pacman -Syu
-
-sudo pacman -S kitty
-sudo pacman -S stow
-sudo pacman -S starship
 
 sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
+cd ~/git/poloLunix-dotfiles/dotfiles 
+
+yay --noconfirm --answerdiff=None --answeredit=None -Sy stow
+
+stow .
+
+yay --noconfirm --answerdiff=None --answeredit=None -S kitty starship google-chrome firefox curl unzip xz-utils zip libglu1-mesa libc6:amd64 libstdc++6:amd64 lib32z1 libbz2-1.0:amd64 neovim android-studio waybar wofi hyprland hyprlocl spotify hypridle hyprpaper
+
 cd 
-
-yay -S google-chrome 
-sudo pacman -S firefox
-
 
 yay -S python3-aur 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-cd 
-
-yay -Syu 
-yay -Sy curl unzip xz-utils zip libglu1-mesa libc6:amd64 libstdc++6:amd64 lib32z1 libbz2-1.0:amd64
 
 cd Downloads/
 
@@ -49,31 +43,6 @@ make all test
 cd ~/Downloads
 
 curls -O https://download.oracle.com/java/23/latest/jdk-23_linux-aarch64_bin.tar.gz
-
 tar -xf ~/Downloads/jdk-23_linux-aarch64_bin.tar.gz -C ~/development/
-
-cd
-
-yay -S neovim
-yay -S android-studio 
-
-yay -S waybay wofi hyprland hyprlock spotify hypridle hyprpaper
-
-cd ~/poloLunix-dotfiles 
-
-
-rm -rf ~/.config/hypr
-rm -rf ~/.config/kitty
-rm -rf ~/.config/nvim
-rm -rf ~/.config/waybar
-rm -rf ~/.config/wofi
-rm  ~/.bashrc
-
-mv hyprland.conf ~/.config/hypr/hyprland.conf
-
-stow .
-
-yay -Syu
-
 
 
